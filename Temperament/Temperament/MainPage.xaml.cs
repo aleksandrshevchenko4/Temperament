@@ -1,9 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace Temperament
@@ -12,6 +13,37 @@ namespace Temperament
     {
         public MainPage()
         {
+            Button btn = new Button
+            {
+                BackgroundColor = Color.Gray,
+                Text = "Тест",
+
+
+            };
+            Button btn1 = new Button
+            {
+                BackgroundColor = Color.Gray,
+                Text = "Тест",
+
+
+            };
+            Button btn2 = new Button
+            {
+                BackgroundColor = Color.Gray,
+                Text = "Тест",
+
+
+            };
+            Button btn3 = new Button
+            {
+                BackgroundColor = Color.Gray,
+                Text = "Тест",
+            };
+
+            btn.Clicked += Btn_Clicked;
+            btn1.Clicked += Btn1_Clicked;
+            btn2.Clicked += Btn2_Clicked;
+            btn3.Clicked += Btn3_Clicked;
             //InitializeComponent();
             var holerikContentPage = new ContentPage
             {
@@ -31,7 +63,8 @@ namespace Temperament
                         HeightRequest = 400,
                         HorizontalOptions = LayoutOptions.Center,
                         VerticalOptions = LayoutOptions.CenterAndExpand
-                       }
+                       },
+                        btn
                     }
                 }
             };
@@ -48,12 +81,14 @@ namespace Temperament
                             HorizontalOptions = LayoutOptions.Center
                         },
                         new Image
-                       { Source = "sangv.jpg",
-                        WidthRequest = 400,
-                        HeightRequest = 400,
-                        HorizontalOptions = LayoutOptions.Center,
-                        VerticalOptions = LayoutOptions.CenterAndExpand
-                       }
+                        {
+                            Source = "sangv.jpg",
+                            WidthRequest = 400,
+                            HeightRequest = 400,
+                            HorizontalOptions = LayoutOptions.Center,
+                            VerticalOptions = LayoutOptions.CenterAndExpand
+                        },
+                        btn1
                     }
                 }
             };
@@ -75,7 +110,8 @@ namespace Temperament
                         HeightRequest = 400,
                         HorizontalOptions = LayoutOptions.Center,
                         VerticalOptions = LayoutOptions.CenterAndExpand
-                       }
+                       },
+                        btn2
                     }
                 }
             };
@@ -97,7 +133,8 @@ namespace Temperament
                         HeightRequest = 400,
                         HorizontalOptions = LayoutOptions.Center,
                         VerticalOptions = LayoutOptions.CenterAndExpand
-                       }
+                       },
+                        btn1
                     }
                 }
             };
@@ -105,6 +142,29 @@ namespace Temperament
             Children.Add(sangvinikContentPage);
             Children.Add(flegmatikContentPage);
             Children.Add(melanholikContentPage);
+        }
+        private async void Btn_Clicked(object sender, EventArgs e)
+        {
+            Uri uri = new Uri("https://temperamenttest.org/ru-ru/#start");
+            await Browser.OpenAsync(uri);
+        }
+
+        private async void Btn1_Clicked(object sender, EventArgs e)
+        {
+            Uri uri = new Uri("https://temperamenttest.org/ru-ru/#start");
+            await Browser.OpenAsync(uri);
+        }
+
+        private async void Btn2_Clicked(object sender, EventArgs e)
+        {
+            Uri uri = new Uri("https://temperamenttest.org/ru-ru/#start");
+            await Browser.OpenAsync(uri);
+        }
+
+        private async void Btn3_Clicked(object sender, EventArgs e)
+        {
+            Uri uri = new Uri("https://temperamenttest.org/ru-ru/#start");
+            await Browser.OpenAsync(uri);
         }
     }
 }
